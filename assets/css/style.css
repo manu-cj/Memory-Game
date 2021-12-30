@@ -39,6 +39,10 @@ body {
 
 .box:hover {
     cursor: pointer;
+
+}
+
+.flip {
     transform: rotateY(180deg);
 }
 
