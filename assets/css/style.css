@@ -35,6 +35,7 @@ body {
     transition: transform 0.8s;
     transform-style: preserve-3d;
     border-radius: 20px;
+    background-size: cover;
 }
 
 .box:hover {
