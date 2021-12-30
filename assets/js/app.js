@@ -35,40 +35,37 @@ function start() {
 
 box1.click(function () {
     $(this).addClass('flip');
-    $(this).children('img').removeClass('hidden');
+    start()
 })
 box2.click(function () {
     $(this).addClass('flip');
-    $(this).children('img').removeClass('hidden');
+    start()
 })
 box3.click(function () {
-    $(this).addClass('flip');
-    $(this).children('img').removeClass('hidden');
+   $(this).addClass('flip');
+    start()
 })
 box4.click(function () {
-    $(this).addClass('flip');
-    $(this).children('img').removeClass('hidden');
+       $(this).addClass('flip');
+    start()
 })
 box5.click(function () {
-    $(this).addClass('flip');
-    $(this).children('img').removeClass('hidden');
+     $(this).addClass('flip');
+    start()
 })
 box6.click(function () {
     $(this).addClass('flip');
-    $(this).children('img').removeClass('hidden');
-})
-box7.click(function () {
-    $(this).addClass('flip');
-    $(this).children('img').removeClass('hidden');
-})
-box8.click(function () {
-    $(this).addClass('flip');
-    $(this).children('img').removeClass('hidden');
-})
-
-
-
-
-$('#start').click(function () {
     start()
 })
+box7.click(function () {
+   $(this).addClass('flip');
+    start()
+})
+box8.click(function () {
+   $(this).addClass('flip');
+    start()
+})
+
+
+
+
