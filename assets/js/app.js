@@ -33,7 +33,6 @@ function start() {
     }
 }
 
-
 box1.click(function () {
     $(this).addClass('flip');
     $(this).children('img').removeClass('hidden');
