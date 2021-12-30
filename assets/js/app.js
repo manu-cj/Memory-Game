@@ -22,10 +22,8 @@ const icons = [
 
 function start() {
     for (i=0; i<box.length; i++) {
-
-
         let rand = Math.floor(Math.random() * (icons.length - 1));
-        box[i].innerHTML = "<img src='" + icons[rand] + "' alt='image'>";
+        box[i].innerHTML = "<img src='" + icons[rand] + "' alt='image' class='hidden'>";
         icons.splice(rand, 1);
     }
 }
