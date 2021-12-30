@@ -34,7 +34,6 @@ body {
     perspective: 1000px;
     transition: transform 0.8s;
     transform-style: preserve-3d;
-    background-color: dodgerblue;
     border-radius: 20px;
 }
 
@@ -50,5 +49,8 @@ body {
     backface-visibility: hidden;
 }
 
+#start {
+    padding: 10px;
+}
 
 
