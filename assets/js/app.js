@@ -92,8 +92,6 @@ function verif() {
     }
 }
 
-
-
 box1.click(function () {
     document.querySelector('#tentative').innerHTML = 'tentative : '+ essaie++ ;
     $(this).addClass('flip');
