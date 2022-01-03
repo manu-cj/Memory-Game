@@ -52,7 +52,6 @@ function verif() {
                     $('.flip').removeClass('flip');
                     $('.limg').addClass('hidden').removeClass('limg');
                     $('.limg2').addClass('hidden').removeClass('limg2');
-                    boleen = false;
                     nbrClic = 0
                     setTimeout(()=> {
                         url1 = '';
@@ -62,13 +61,7 @@ function verif() {
                     }, 100)
                     console.log(boleen)
                 }, 1000)
-                if (boleen === false) {
 
-                    url1 = '';
-                    url2 = '';
-
-                    console.log(url1);
-                }
             }
             if (url1.src === url2.src) {
                 alert('Ok')
