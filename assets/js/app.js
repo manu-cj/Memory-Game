@@ -36,10 +36,13 @@ function start() {
         box[i].innerHTML = "<img src='" + icons[rand] + "' alt='image' class='hidden'>";
         icons.splice(rand, 1);
     }
-
 }
 
 function verif() {
+    if (document.querySelector('.limg')=== url1) {
+        document.querySelector('#score').innerHTML = 'score : ' + (score-= 2);
+        nbrClic = 1;
+    }
     nbrClic++
     if (boleen === false) {
         if (nbrClic === 1) {
