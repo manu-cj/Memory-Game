@@ -192,6 +192,7 @@ box8.click(function () {
 })
 
 $('#start').click(function () {
+    document.querySelector('#jeux').style.display = 'flex';
     start()
     $('#start').html('<a href="index.html">Rejouer</a>');
 })

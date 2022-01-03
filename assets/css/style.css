@@ -15,27 +15,41 @@ body {
     width: 40%;
     height: 30em;
     border: ridge 1em rebeccapurple;
-    display: flex;
+    display: none;
+    justify-content: space-around;
     flex-direction: row;
     flex-wrap: wrap;
-
+background-color: #6279c5;
 }
 
 #etatJeux {
     width: 40%;
-    height: 5em;
+    height: 3em;
     border: ridge 0.5em #993375;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+}
+
+#score {
+    width: 33%;
+}
+
+#tentative {
+    width: 33%;
 }
 
 .box {
     width: 25%;
-    height: 25%;
+    height: 40%;
     border: ridge 0.5em #993375;
     perspective: 1000px;
     transition: transform 0.8s;
     transform-style: preserve-3d;
-    border-radius: 20px;
+    border-radius: 100px;
     background-size: cover;
+    background: linear-gradient(0deg, rgba(255,255,255,1) 52%, rgba(195,34,34,1) 53%);
 }
 
 .box:hover {
@@ -63,10 +77,48 @@ img {
 }
 
 #start {
-    padding: 10px;
+    padding: 5px;
+    height: 30px;
+    background-color: #98a9e5;
 }
 
 .hidden {
     display: none;
 }
 
+a {
+    text-decoration-line: none;
+    color: black;
+}
+
+#start:hover {
+    cursor: pointer;
+    background-color: #6279c5;
+}
+
+
+@media screen and (min-width: 320px) {
+    #jeux {
+        width: 90%;
+    }
+    .box {
+        width: 50%;
+        height: 25%;
+    }
+    #etatJeux {
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 620px) {
+    #jeux {
+        width: 70%;
+    }
+    .box {
+        width: 25%;
+        height: 40%;
+    }
+    #etatJeux {
+        width: 70%;
+    }
+}
