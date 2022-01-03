@@ -28,7 +28,7 @@ const icons = [
 let url1 = '';
 let url2 = '';
 let boleen = false;
-nbrClic = 0
+nbrClic = 0;
 
 function start() {
     for (i = 0; i < box.length; i++) {
@@ -39,12 +39,8 @@ function start() {
 }
 
 function verif() {
-    if (document.querySelector('.limg')=== url1) {
-        document.querySelector('#score').innerHTML = 'score : ' + (score-= 2);
-        nbrClic = 1;
-    }
-    nbrClic++
     if (boleen === false) {
+        nbrClic++
         if (nbrClic === 1) {
             url1 = document.querySelector('.limg');
         }
@@ -53,7 +49,7 @@ function verif() {
                 url2 = document.querySelector('.limg2')
                 if (url1.src !== url2.src) {
                     setTimeout(()=> {
-                        document.querySelector('#score').innerHTML = 'score : ' + (score-= 1);
+                        document.querySelector('#score').innerHTML = 'score : ' + (score-= 0.5);
                         $('.flip').removeClass('flip');
                         $('.limg').addClass('hidden').removeClass('limg');
                         $('.limg2').addClass('hidden').removeClass('limg2');
