@@ -56,9 +56,6 @@ background-color: #6279c5;
     cursor: pointer;
 
 }
-.flip90 {
-    display: none;
-}
 .flip {
     transform: rotateX(360deg);
 }
