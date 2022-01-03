@@ -43,21 +43,41 @@ function verif() {
             url1 = document.querySelector('.limg');
 
         }
+
+
         if (nbrClic === 2) {
+            url2 = document.querySelector('.limg2')
             if (url1.src !== url2.src) {
                 setTimeout(()=> {
                     $('.flip').removeClass('flip');
-                    $('.limg').addClass('hidden');
+                    $('.limg').addClass('hidden').removeClass('limg');
+                    $('.limg2').addClass('hidden').removeClass('limg2');
+                    boleen = false;
+                    nbrClic = 0
+                    setTimeout(()=> {
+                        url1 = '';
+                        url2 = '';
+                        console.log(url1);
+                        console.log(url2);
+                    }, 100)
+                    console.log(boleen)
                 }, 1000)
+                if (boleen === false) {
+
+                    url1 = '';
+                    url2 = '';
+
+                    console.log(url1);
+                }
             }
-        }
-        if (nbrClic === 3) {
-            url2 = document.querySelector('.limg')
             if (url1.src === url2.src) {
                 alert('Ok')
-                nbrClic = 0
+               boleen = false;
             }
         }
+
+
+
     }
 
     console.log(nbrClic)
@@ -73,7 +93,7 @@ box1.click(function () {
         $(this).children('img').addClass('limg');
     }
     if (nbrClic === 1) {
-        $(this).children('img').addClass('limg');
+        $(this).children('img').addClass('limg2');
     }
     verif()
 })
@@ -91,26 +111,68 @@ box2.click(function () {
 box3.click(function () {
     $(this).addClass('flip');
     $(this).children('img').removeClass('hidden');
+    if (nbrClic === 0) {
+        $(this).children('img').addClass('limg');
+    }
+    if (nbrClic === 1) {
+        $(this).children('img').addClass('limg2');
+    }
+    verif()
 })
 box4.click(function () {
     $(this).addClass('flip');
     $(this).children('img').removeClass('hidden');
+      if (nbrClic === 0) {
+        $(this).children('img').addClass('limg');
+    }
+    if (nbrClic === 1) {
+        $(this).children('img').addClass('limg2');
+    }
+    verif()
 })
 box5.click(function () {
     $(this).addClass('flip');
     $(this).children('img').removeClass('hidden');
+      if (nbrClic === 0) {
+        $(this).children('img').addClass('limg');
+    }
+    if (nbrClic > 1) {
+        $(this).children('img').addClass('limg2');
+    }
+    verif()
 })
 box6.click(function () {
     $(this).addClass('flip');
     $(this).children('img').removeClass('hidden');
+      if (nbrClic === 0) {
+        $(this).children('img').addClass('limg');
+    }
+    if (nbrClic === 1) {
+        $(this).children('img').addClass('limg2');
+    }
+    verif()
 })
 box7.click(function () {
     $(this).addClass('flip');
     $(this).children('img').removeClass('hidden');
+      if (nbrClic === 0) {
+        $(this).children('img').addClass('limg');
+    }
+    if (nbrClic === 1) {
+        $(this).children('img').addClass('limg2');
+    }
+    verif()
 })
 box8.click(function () {
     $(this).addClass('flip');
     $(this).children('img').removeClass('hidden');
+      if (nbrClic === 0) {
+        $(this).children('img').addClass('limg');
+    }
+    if (nbrClic === 1) {
+        $(this).children('img').addClass('limg2');
+    }
+    verif()
 })
 
 $('#start').click(function () {
