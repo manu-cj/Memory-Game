@@ -90,6 +90,9 @@ function verif() {
     if (score2 === 8) {
         document.querySelector('#score').innerHTML = 'vous avez fait ' + score + '/8';
     }
+    if (score >= 8) {
+        score = 0;
+    }
 }
 
 box1.click(function () {
