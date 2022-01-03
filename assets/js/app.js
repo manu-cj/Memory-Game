@@ -43,18 +43,27 @@ function verif() {
             url1 = document.querySelector('.limg');
 
         }
-        if (nbrClic===2) {
+        if (nbrClic === 2) {
+            if (url1.src !== url2.src) {
+                setTimeout(()=> {
+                    $('.flip').removeClass('flip');
+                    $('.limg').addClass('hidden');
+                }, 1000)
+            }
+        }
+        if (nbrClic === 3) {
             url2 = document.querySelector('.limg')
             if (url1.src === url2.src) {
                 alert('Ok')
+                nbrClic = 0
             }
-
         }
     }
 
     console.log(nbrClic)
     console.log(url1.src)
     console.log(url2)
+    console.log(boleen)
 }
 
 box1.click(function () {
@@ -66,10 +75,6 @@ box1.click(function () {
     if (nbrClic === 1) {
         $(this).children('img').addClass('limg');
     }
-    if (url1.src !== url2.src) {
-        $(this).removeClass('flip');
-    }
-
     verif()
 })
 box2.click(function () {
