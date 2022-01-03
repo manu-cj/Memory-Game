@@ -64,28 +64,22 @@ function verif() {
                     }, 1000)
                 }
                 if (url1.src === url2.src) {
+
                     document.querySelector('#score').innerHTML = 'Score : ' + (score+=2);
                     score2+=2
-                    console.log(score2)
-                    $('.limg').removeClass('limg');
-                    $('.limg2').removeClass('limg2');
-                    alert('Ok')
+                    $('.limg').removeClass('limg').parent('div').addClass('flip90');
+                    $('.limg2').removeClass('limg2').parent('div').addClass('flip90');
                     setTimeout(()=> {
                         url1 = '';
                         url2 = '';
                         nbrClic = 0
-                        console.log(url1);
-                        console.log(url2);
+
                     }, 100)
                 }
             }
         }
     }
 
-    console.log(nbrClic)
-    console.log(url1.src)
-    console.log(url2)
-    console.log(boleen)
     if (score2 === 8) {
         document.querySelector('#score').innerHTML = 'vous avez fait ' + score + '/8';
     }
