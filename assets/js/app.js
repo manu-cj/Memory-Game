@@ -52,25 +52,29 @@ function verif() {
                     $('.flip').removeClass('flip');
                     $('.limg').addClass('hidden').removeClass('limg');
                     $('.limg2').addClass('hidden').removeClass('limg2');
-                    nbrClic = 0
                     setTimeout(()=> {
                         url1 = '';
                         url2 = '';
+                        nbrClic = 0
                         console.log(url1);
                         console.log(url2);
                     }, 100)
                     console.log(boleen)
                 }, 1000)
-
             }
             if (url1.src === url2.src) {
+                $('.limg').removeClass('limg');
+                $('.limg2').removeClass('limg2');
                 alert('Ok')
-               boleen = false;
+                setTimeout(()=> {
+                    url1 = '';
+                    url2 = '';
+                    nbrClic = 0
+                    console.log(url1);
+                    console.log(url2);
+                }, 100)
             }
         }
-
-
-
     }
 
     console.log(nbrClic)
@@ -126,10 +130,10 @@ box4.click(function () {
 box5.click(function () {
     $(this).addClass('flip');
     $(this).children('img').removeClass('hidden');
-      if (nbrClic === 0) {
+    if (nbrClic === 0) {
         $(this).children('img').addClass('limg');
     }
-    if (nbrClic > 1) {
+    if (nbrClic === 1) {
         $(this).children('img').addClass('limg2');
     }
     verif()
@@ -146,7 +150,7 @@ box6.click(function () {
     verif()
 })
 box7.click(function () {
-    $(this).addClass('flip');
+   $(this).addClass('flip');
     $(this).children('img').removeClass('hidden');
       if (nbrClic === 0) {
         $(this).children('img').addClass('limg');
