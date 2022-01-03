@@ -24,6 +24,8 @@ const icons = [
 
 let url1 = '';
 let url2 = '';
+let boleen = false;
+nbrClic = 0
 
 function start() {
     for (i = 0; i < box.length; i++) {
@@ -31,18 +33,55 @@ function start() {
         box[i].innerHTML = "<img src='" + icons[rand] + "' alt='image' class='hidden'>";
         icons.splice(rand, 1);
     }
+    boleen = true
+}
+
+function verif() {
+    if (boleen === true) {
+        nbrClic++
+        if (nbrClic === 1) {
+            url1 = document.querySelector('.limg');
+
+        }
+        if (nbrClic===2) {
+            url2 = document.querySelector('.limg')
+            if (url1.src === url2.src) {
+                alert('Ok')
+            }
+
+        }
+    }
+
+    console.log(nbrClic)
+    console.log(url1.src)
+    console.log(url2)
 }
 
 box1.click(function () {
     $(this).addClass('flip');
     $(this).children('img').removeClass('hidden');
-    if (box1.children('img').src === box2.children('img').src) {
-        alert('hey')
+    if (nbrClic === 0) {
+        $(this).children('img').addClass('limg');
     }
+    if (nbrClic === 1) {
+        $(this).children('img').addClass('limg');
+    }
+    if (url1.src !== url2.src) {
+        $(this).removeClass('flip');
+    }
+
+    verif()
 })
 box2.click(function () {
     $(this).addClass('flip');
     $(this).children('img').removeClass('hidden');
+    if (nbrClic === 0) {
+        $(this).children('img').addClass('limg');
+    }
+    if (nbrClic === 1) {
+        $(this).children('img').addClass('limg2');
+    }
+    verif()
 })
 box3.click(function () {
     $(this).addClass('flip');
