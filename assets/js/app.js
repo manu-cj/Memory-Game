@@ -9,6 +9,9 @@ let box8 = $('#box8');
 
 let box = document.querySelectorAll('.box');
 let frontface = $('.frontFace');
+let score = 0;
+let score2 = 0;
+let essaie = 1;
 
 
 const icons = [
@@ -33,25 +36,41 @@ function start() {
         box[i].innerHTML = "<img src='" + icons[rand] + "' alt='image' class='hidden'>";
         icons.splice(rand, 1);
     }
-    boleen = true
+
 }
 
 function verif() {
-    if (boleen === true) {
-        nbrClic++
+    nbrClic++
+    if (boleen === false) {
         if (nbrClic === 1) {
             url1 = document.querySelector('.limg');
-
         }
-
-
-        if (nbrClic === 2) {
-            url2 = document.querySelector('.limg2')
-            if (url1.src !== url2.src) {
-                setTimeout(()=> {
-                    $('.flip').removeClass('flip');
-                    $('.limg').addClass('hidden').removeClass('limg');
-                    $('.limg2').addClass('hidden').removeClass('limg2');
+        if (boleen === false) {
+            if (nbrClic >= 2) {
+                url2 = document.querySelector('.limg2')
+                if (url1.src !== url2.src) {
+                    setTimeout(()=> {
+                        document.querySelector('#score').innerHTML = 'score : ' + (score-= 1);
+                        $('.flip').removeClass('flip');
+                        $('.limg').addClass('hidden').removeClass('limg');
+                        $('.limg2').addClass('hidden').removeClass('limg2');
+                        setTimeout(()=> {
+                            url1 = '';
+                            url2 = '';
+                            nbrClic = 0;
+                            console.log(url1);
+                            console.log(url2);
+                        }, 100)
+                        console.log(boleen)
+                    }, 1000)
+                }
+                if (url1.src === url2.src) {
+                    document.querySelector('#score').innerHTML = 'Score : ' + (score+=2);
+                    score2+=2
+                    console.log(score2)
+                    $('.limg').removeClass('limg');
+                    $('.limg2').removeClass('limg2');
+                    alert('Ok')
                     setTimeout(()=> {
                         url1 = '';
                         url2 = '';
@@ -59,20 +78,7 @@ function verif() {
                         console.log(url1);
                         console.log(url2);
                     }, 100)
-                    console.log(boleen)
-                }, 1000)
-            }
-            if (url1.src === url2.src) {
-                $('.limg').removeClass('limg');
-                $('.limg2').removeClass('limg2');
-                alert('Ok')
-                setTimeout(()=> {
-                    url1 = '';
-                    url2 = '';
-                    nbrClic = 0
-                    console.log(url1);
-                    console.log(url2);
-                }, 100)
+                }
             }
         }
     }
@@ -81,9 +87,15 @@ function verif() {
     console.log(url1.src)
     console.log(url2)
     console.log(boleen)
+    if (score2 === 8) {
+        document.querySelector('#score').innerHTML = 'vous avez fait ' + score + '/8';
+    }
 }
 
+
+
 box1.click(function () {
+    document.querySelector('#tentative').innerHTML = 'tentative : '+ essaie++ ;
     $(this).addClass('flip');
     $(this).children('img').removeClass('hidden');
     if (nbrClic === 0) {
@@ -95,6 +107,7 @@ box1.click(function () {
     verif()
 })
 box2.click(function () {
+    document.querySelector('#tentative').innerHTML = 'tentative : '+ essaie++ ;
     $(this).addClass('flip');
     $(this).children('img').removeClass('hidden');
     if (nbrClic === 0) {
@@ -106,6 +119,7 @@ box2.click(function () {
     verif()
 })
 box3.click(function () {
+    document.querySelector('#tentative').innerHTML = 'tentative : '+ essaie++ ;
     $(this).addClass('flip');
     $(this).children('img').removeClass('hidden');
     if (nbrClic === 0) {
@@ -117,6 +131,7 @@ box3.click(function () {
     verif()
 })
 box4.click(function () {
+    document.querySelector('#tentative').innerHTML = 'tentative : '+ essaie++ ;
     $(this).addClass('flip');
     $(this).children('img').removeClass('hidden');
       if (nbrClic === 0) {
@@ -128,6 +143,7 @@ box4.click(function () {
     verif()
 })
 box5.click(function () {
+    document.querySelector('#tentative').innerHTML = 'tentative : '+ essaie++ ;
     $(this).addClass('flip');
     $(this).children('img').removeClass('hidden');
     if (nbrClic === 0) {
@@ -139,6 +155,7 @@ box5.click(function () {
     verif()
 })
 box6.click(function () {
+    document.querySelector('#tentative').innerHTML = 'tentative : '+ essaie++ ;
     $(this).addClass('flip');
     $(this).children('img').removeClass('hidden');
       if (nbrClic === 0) {
@@ -150,6 +167,7 @@ box6.click(function () {
     verif()
 })
 box7.click(function () {
+    document.querySelector('#tentative').innerHTML = 'tentative : '+ essaie++ ;
    $(this).addClass('flip');
     $(this).children('img').removeClass('hidden');
       if (nbrClic === 0) {
@@ -161,6 +179,7 @@ box7.click(function () {
     verif()
 })
 box8.click(function () {
+    document.querySelector('#tentative').innerHTML = 'tentative : '+ essaie++ ;
     $(this).addClass('flip');
     $(this).children('img').removeClass('hidden');
       if (nbrClic === 0) {
@@ -174,5 +193,6 @@ box8.click(function () {
 
 $('#start').click(function () {
     start()
+    $('#start').html('<a href="index.html">Rejouer</a>');
 })
 
